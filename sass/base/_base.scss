@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	// This defines what 1rem is
+	//from larger to smaller
+	font-size: 62.5%;
+	@include respond(tab-land) {
+		font-size: 56.25%;
+	}
+	@include respond(tab-port) {
+		font-size: 50%;
+	}
+	@include respond(big-desktop) {
+		font-size: 75%;
+	}
+}
+
+body {
+	@include respond(tab-port) {
+		padding: 0rem;
+	}
+	padding: 3rem;
+	box-sizing: border-box;
+}
+::selection {
+	background-color: $color-primary;
+}
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #55c57a;
+	transition: all 0.7s;
+}
